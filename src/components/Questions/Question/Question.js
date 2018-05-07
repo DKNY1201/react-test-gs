@@ -8,8 +8,7 @@ const question = (props) => {
     const answers = props.answers.map(answer =>
         <Answer key={answer.id}
                 clicked={() => props.selectAnswer(props.questionId, answer.id)}
-                selected={answer.selected}
-        >
+                selected={answer.selected}>
             {answer.label}
         </Answer>);
 
@@ -18,15 +17,15 @@ const question = (props) => {
         questionClassName.push("Show");
     }
 
-    const prevArrowClassName = ["Prev"];
+    let prevArrow = null;
     if (props.showPrev) {
-        prevArrowClassName.push("Show");
+        prevArrow = <img className="Prev" src={Prev} alt="Previous question" onClick={props.prevQuestion}/>;
     }
 
     return (
         <div className={questionClassName.join(" ")}>
             <div className="Navigate">
-                <img className={prevArrowClassName.join(" ")} src={Prev} alt="Previous question" onClick={props.prevQuestion}/>
+                {prevArrow}
                 <img className="Next" src={Prev} alt="Next question" onClick={props.nextQuestion}/>
             </div>
             <h2 className="Title">
