@@ -1,0 +1,46 @@
+.Question {
+  background: white;
+  box-shadow: 0px 0px 5px 1px rgba(204,204,204,1);
+  width: 80%;
+  height: 80%;
+  text-align: center;
+  padding: 20px;
+  margin: 30px auto;
+  border: 1px solid #cccccc;
+  overflow: hidden;
+  display: none;
+
+  &.Show {
+    display: block;
+  }
+
+  .Navigate {
+    display: flex;
+    justify-content: space-between;
+
+    img {
+      cursor: pointer;
+    }
+
+    .Next {
+      transform: scaleX(-1);
+    }
+  }
+
+  .Title {
+    font-weight: normal;
+    font-size: 28px;
+  }
+
+  .Description {
+    font-size: 16px;
+  }
+
+  .Answers {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    text-align: center;
+    line-height: 40px;
+  }
+}
