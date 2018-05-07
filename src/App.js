@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
-import './App.scss';
-import Exam from './containers/Exam';
 import {Switch, Route, Redirect} from 'react-router-dom';
+
+import Questions from './containers/Questions/Questions';
+import VirtualWrapper from './hoc/VirtualWrapper/VirtualWrapper';
+
 
 class App extends Component {
   render() {
       const routes = (
         <Switch>
-            <Route path="/assessment" component={Exam}/>
+            <Route path="/assessment" component={Questions}/>
             <Redirect to="/assessment"/>
         </Switch>
       )
 
     return (
-        <div>
+        <VirtualWrapper>
             {routes}
-        </div>
-
+        </VirtualWrapper>
     );
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Answer from '../Answers/Answer/Answer';
+import Answer from './Answer/Answer';
 import './Question.scss';
 import Prev from '../../../assets/images/prev.jpg';
 
@@ -13,15 +13,20 @@ const question = (props) => {
             {answer.label}
         </Answer>);
 
-    const className = ["Question"];
+    const questionClassName = ["Question"];
     if (props.show) {
-        className.push("Show");
+        questionClassName.push("Show");
+    }
+
+    const prevArrowClassName = ["Prev"];
+    if (props.showPrev) {
+        prevArrowClassName.push("Show");
     }
 
     return (
-        <div className={className.join(" ")}>
+        <div className={questionClassName.join(" ")}>
             <div className="Navigate">
-                <img className="Prev" src={Prev} alt="Previous question" onClick={props.prevQuestion}/>
+                <img className={prevArrowClassName.join(" ")} src={Prev} alt="Previous question" onClick={props.prevQuestion}/>
                 <img className="Next" src={Prev} alt="Next question" onClick={props.nextQuestion}/>
             </div>
             <h2 className="Title">
