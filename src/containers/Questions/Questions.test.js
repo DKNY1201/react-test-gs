@@ -5,7 +5,7 @@ import Adapter from 'enzyme-adapter-react-16';
 
 import Questions from './Questions';
 import FinalPage from '../../components/FinalPage/FinalPage';
-import Question from '../../components/Questions/Question/Question';
+import Question from '../../components/Question/Question';
 
 configure({adapter: new Adapter()});
 

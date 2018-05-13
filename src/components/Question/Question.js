@@ -2,7 +2,7 @@ import React from 'react';
 
 import Answer from './Answer/Answer';
 import './Question.scss';
-import Prev from '../../../assets/images/prev.jpg';
+import Prev from '../../assets/images/prev.jpg';
 
 const question = (props) => {
     const answers = props.answers.map(answer =>
